@@ -20,8 +20,8 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'Dockercred', variable: 'Dockercred')]) {
-                   sh 'docker login -u radhakrishnamopuru459 -p ${Dockercred}'
+                   withCredentials([string(credentialsId: 'dockercreds', variable: 'dockercreds')]) {
+                   sh 'docker login -u radhakrishnamopuru459 -p ${dockercreds}'
 
 }
                    sh 'docker push javatechie/devops-integration'
