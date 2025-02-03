@@ -20,20 +20,14 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'dockercreds', variable: 'dockercreds')]) {
-                   sh 'docker login -u radhakrishnamopuru459 -p ${dockercreds}'
+                   withCredentials([string(credentialsId: 'DockerHubcreds', variable: 'DockerHubcreds')]) {
+                   sh 'docker login -u radhakrishnamopuru459 -p ${DockerHubcreds}'
 
 }
                    sh 'docker push javatechie/devops-integration'
                 }
             }
         }
-        stage('Deploy to k8s'){
-            steps{
-                script{
-                    kubernetesDeploy (configs: 'deploymentservice.yaml',kubeconfigId: 'k8sconfigpwd')
-                }
-            }
-        }
+                
     }
 }
