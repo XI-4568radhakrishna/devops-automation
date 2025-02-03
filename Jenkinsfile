@@ -21,7 +21,7 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'DockerHubcreds', variable: 'DockerHubcreds')]) {
-                   sh 'docker login -u radhakrishnamopuru459 -p ${DockerHubcreds}'
+                   sh 'docker login -u radhakrishnamopuru459 -p ${Gandhirkm@123}'
 
 }
                    sh 'docker push javatechie/devops-integration'
