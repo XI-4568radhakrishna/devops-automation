@@ -3,7 +3,7 @@ pipeline {
     environment {
         AWS_ACCOUNT_ID="864899865567"
         AWS_DEFAULT_REGION="us-east-1"
-        IMAGE_REPO_NAME="aisdlc"
+        IMAGE_REPO_NAME="devops-automation"
         IMAGE_TAG="v1"
         REPOSITORY_URI = "864899865567.dkr.ecr.us-east-1.amazonaws.com/aisdlc"
     }
