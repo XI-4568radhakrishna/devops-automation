@@ -3,8 +3,8 @@ pipeline {
     environment {
         AWS_ACCOUNT_ID="864899865567"
         AWS_DEFAULT_REGION="us-east-1"
-        IMAGE_REPO_NAME="devops-automation"
-        IMAGE_TAG="v1"
+        IMAGE_REPO_NAME="aisdlc"
+        IMAGE_TAG="v121"
         REPOSITORY_URI = "864899865567.dkr.ecr.us-east-1.amazonaws.com/aisdlc"
     }
    
@@ -21,7 +21,7 @@ pipeline {
         
         stage('Cloning Git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'gitcreds', url: 'https://github.com/XI-4568radhakrishna/devops-automation.git']]])     
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/XI-4568radhakrishna/devops-automation.git']]])     
             }
         }
   
